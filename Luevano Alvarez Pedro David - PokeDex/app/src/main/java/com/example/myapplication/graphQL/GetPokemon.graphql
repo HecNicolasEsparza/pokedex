@@ -1,0 +1,39 @@
+query GetPokemon($name: String!) {
+    pokemon(name: $name) {
+        id
+        name
+        image
+        types
+        classification
+        height {
+            minimum
+            maximum
+        }
+        weight {
+            minimum
+            maximum
+        }
+        maxCP
+        maxHP
+        fleeRate
+        resistant
+        weaknesses
+        evolutions {
+            id
+            name
+            image
+        }
+        attacks {
+            fast {
+                name
+                type
+                damage
+            }
+            special {
+                name
+                type
+                damage
+            }
+        }
+    }
+}

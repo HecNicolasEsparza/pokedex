@@ -1,0 +1,19 @@
+query GetAllPokemons {
+    pokemons(first: 150) {
+        id
+        name
+        image
+        types
+        height {
+            minimum
+            maximum
+        }
+        weight {
+            minimum
+            maximum
+        }
+        maxCP
+        maxHP
+        classification
+    }
+}

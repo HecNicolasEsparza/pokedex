@@ -1,0 +1,48 @@
+schema {
+    query: Query
+}
+
+type Query {
+    pokemons(first: Int!): [Pokemon]
+    pokemon(name: String!): Pokemon
+}
+
+type Pokemon {
+    id: ID!
+    number: String
+    name: String
+    weight: PokemonDimension
+    height: PokemonDimension
+    classification: String
+    types: [String]
+    resistant: [String]
+    weaknesses: [String]
+    fleeRate: Float
+    maxCP: Int
+    maxHP: Int
+    image: String
+    evolutions: [Pokemon]
+    evolutionRequirements: PokemonEvolutionRequirement
+    attacks: PokemonAttack
+}
+
+type PokemonDimension {
+    minimum: String
+    maximum: String
+}
+
+type PokemonEvolutionRequirement {
+    amount: Int
+    name: String
+}
+
+type PokemonAttack {
+    fast: [Attack]
+    special: [Attack]
+}
+
+type Attack {
+    name: String
+    type: String
+    damage: Int
+}
